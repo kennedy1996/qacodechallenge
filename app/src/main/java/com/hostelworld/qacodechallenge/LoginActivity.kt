@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //Test the android application on a mobile device
         ActivityLoginBinding.inflate(layoutInflater).run {
             setContentView(root)
             setupUI()
