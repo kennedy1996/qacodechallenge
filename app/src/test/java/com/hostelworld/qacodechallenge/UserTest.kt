@@ -154,33 +154,33 @@ internal class UserTest {
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     @Test
-    fun testLoginUserWithEmailInvalidType1ThenUserNotLogindErrorInvalidEmail() {
-        val resultLoginUserLoginUser = RegisteredUsers.login("test", VALID_PASSWORD)
+    fun testLoginUserWithEmailInvalidType1ThenUserNotLoginErrorInvalidEmail() {
+        val resultLoginUserLoginUser = RegisteredUsers.login("tes5t", VALID_PASSWORD)
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     @Test
-    fun testLoginUserWithEmailInvalidType2ThenUserNotLogindErrorInvalidEmail() {
-        val resultLoginUserLoginUser = RegisteredUsers.login("@.com", VALID_PASSWORD)
+    fun testLoginUserWithEmailInvalidType2ThenUserNotLoginErrorInvalidEmail() {
+        val resultLoginUserLoginUser = RegisteredUsers.login(VALID_EMAIL, VALID_PASSWORD)
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     @Test
-    fun testLoginUserWithEmailInvalidType3ThenUserNotLogindErrorInvalidEmail() {
+    fun testLoginUserWithEmailInvalidType3ThenUserNotLoginErrorInvalidEmail() {
         val resultLoginUserLoginUser = RegisteredUsers.login("e", VALID_PASSWORD)
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     @Test
-    fun testLoginUserWithEmailInvalidType4ThenUserNotLogindErrorInvalidEmail() {
+    fun testLoginUserWithEmailInvalidType4ThenUserNotLoginErrorInvalidEmail() {
         val resultLoginUserLoginUser = RegisteredUsers.login("4", VALID_PASSWORD)
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     @Test
-    fun testLoginUserWithEmailInvalidType5ThenUserNotLogindErrorInvalidEmail() {
+    fun testLoginUserWithEmailInvalidType5ThenUserNotLoginErrorInvalidEmail() {
         val resultLoginUserLoginUser = RegisteredUsers.login("4letter@com", VALID_PASSWORD)
         Assert.assertEquals(LoginResult.InvalidEmail, resultLoginUserLoginUser)
     }
     //With Password
     @Test
-    fun testLoginUserWithPasswordIsNullThenUserNotLogindErrorPasswordInvalid() {
+    fun testLoginUserWithPasswordIsNullThenUserNotLoginErrorPasswordInvalid() {
         val resultLoginUserLoginUser = RegisteredUsers.login(VALID_EMAIL, null)
         Assert.assertEquals(LoginResult.InvalidPassword, resultLoginUserLoginUser)
     }
