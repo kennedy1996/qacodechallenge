@@ -14,46 +14,45 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-internal class MainActivityTest{
-
-    @get:Rule var activityScenarioRule = activityScenarioRule<MainActivity>()
+internal class UserDetailsActivityTest{
+    @get:Rule var activityScenarioRule = activityScenarioRule<UserDetailsActivity>()
 
     @Test
     fun checkActivityVisibility(){
+        onView(withId(R.id.layout_activity_user_details))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkGreetingTextViewVisibility(){
+        onView(withId(R.id.greetingTv))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkFirstNameTextViewVisibility(){
+        onView(withId(R.id.firstNameTv))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkLastNameTextViewVisibility(){
+        onView(withId(R.id.lastNameTv))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkEmailTextViewVisibility(){
+        onView(withId(R.id.emailTv))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkLogoutButtonVisibility(){
+        onView(withId(R.id.logoutBtn))
+            .check(matches(isDisplayed()))
+    }
+    @Test
+    fun checkNavigateLogoutButton(){
+        onView(withId(R.id.logoutBtn))
+            .perform(click())
         onView(withId(R.id.layout_activity_main))
-            .check(matches(isDisplayed()))
-    }
-    @Test
-    fun checkLoginButtonVisibility(){
-        onView(withId(R.id.btnLogin))
-            .check(matches(isDisplayed()))
-    }
-    @Test
-    fun checkCreateAccountButtonVisibility(){
-        onView(withId(R.id.btnCreateAccount))
-            .check(matches(isDisplayed()))
-    }
-    @Test
-    fun checkNavigateLoginButton(){
-        onView(withId(R.id.btnLogin))
-            .perform(click())
-        onView(withId(R.id.layout_activity_login))
-            .check(matches(isDisplayed()))
-    }
-    @Test
-    fun checkNavigateCreateAccountButton(){
-        onView(withId(R.id.btnCreateAccount))
-            .perform(click())
-        onView(withId(R.id.layout_activity_create_account))
             .check(matches(isDisplayed()))
     }
 
-    @Test
-    fun checkBackFromCreateAccount(){
-        onView(withId(R.id.btnCreateAccount))
-            .perform(click())
-        Espresso.pressBack()
-        onView(withId(R.id.layout_activity_main))
-            .check(matches(isDisplayed()))
-    }
 }
